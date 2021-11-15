@@ -8,8 +8,8 @@ const mensajeSchema = new schema.Entity('mensaje',{
 
 const normalizar = (mensaje) => {
     let normalizedMensaje = normalize(mensaje, mensajeSchema);
-    longAntes = JSON.stringify(mensaje).length;
-    longDespues = JSON.stringify(normalizedMensaje).length;
+    let longAntes = JSON.stringify(mensaje).length;
+    let longDespues = JSON.stringify(normalizedMensaje).length;
     console.log('Longitud antes de normalizar:', longAntes);
     console.log('Longitud después de normalizar:', longDespues);
     console.log('Compresión:', `${Math.trunc((1 - (longDespues / longAntes)) * 100)} %`);
@@ -17,7 +17,7 @@ const normalizar = (mensaje) => {
 }
 
 const desnormalizar = (normalizedMensaje) => {
-    return denormalizedMensaje = denormalize(normalizedMensaje.result, mensajeSchema, normalizedMensaje.entities);;
+    return denormalizedMensaje = denormalize(normalizedMensaje.result, mensajeSchema, normalizedMensaje.entities);
 }
 
 module.exports = {
